@@ -1,3 +1,8 @@
+0.02 2026-05-27
+    - released the installed Ajax worker bootstrap fix so skill installs update
+      to the version that resolves `Preview::*` modules from the skill-local
+      `lib/` path when `/app/preview` loads in DD
+
 0.01 2026-05-27
     - added the first packaged `preview` skill with `dashboard preview.files`
       to bind the current local directory into a DD browser file-preview page
