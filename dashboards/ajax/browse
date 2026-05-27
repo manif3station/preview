@@ -1,0 +1,25 @@
+  BEGIN {
+    my $ajax_file = $ENV{DEVELOPER_DASHBOARD_AJAX_FILE} || '';
+    if ( $ajax_file ne '' ) {
+      require File::Basename;
+      require File::Spec;
+      require lib;
+      my $root = File::Basename::dirname($ajax_file);
+      $root = File::Basename::dirname($root) for 1 .. 4;
+      my $candidate = File::Spec->catdir( $root, 'lib' );
+      lib->import($candidate) if -d $candidate;
+    }
+  }
+
+  use JSON::PP qw(encode_json);
+  use Preview::Directory ();
+  use Preview::State ();
+
+  my $root = Preview::State::load_root();
+  my $relative = params->{path} // q{};
+  my $payload = Preview::Directory::list_directory(
+    root     => $root,
+    relative => $relative,
+  );
+
+  print encode_json($payload);

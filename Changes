@@ -1,0 +1,7 @@
+0.01 2026-05-27
+    - added the first packaged `preview` skill with `dashboard preview.files`
+      to bind the current local directory into a DD browser file-preview page
+    - added a bookmark-backed browser surface with Ajax directory browsing and
+      inline previews for text, images, pdf, audio, and video files
+    - added Docker-verified Perl and Playwright tests plus skill-local
+      governance, usage, and release documentation
