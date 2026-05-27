@@ -17,6 +17,7 @@ What it does:
 - lists files and subdirectories from that root and allows moving deeper into child folders
 - previews text, images, pdf, audio, and video files inline
 - keeps unknown binary files visible in the list while reporting that they are not previewable inline
+- loads the skill's own Perl modules from the installed skill path so `/app/preview` works after a normal `dashboard skills install`
 
 ## Installation
 

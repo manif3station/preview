@@ -23,6 +23,8 @@ Use this when the directory you want is not the current shell working directory.
 http://127.0.0.1:7890/app/preview
 ```
 
+After a normal skill install, the page loads its preview modules from `~/.developer-dashboard/skills/preview/lib/` automatically. No extra Perl library export is required.
+
 The page shows:
 
 - a root status banner

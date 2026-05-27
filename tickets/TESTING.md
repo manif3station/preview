@@ -9,11 +9,12 @@ docker compose -f ~/projects/skills/docker-compose.testing.yml run --rm perl-tes
 ## Verified Result
 
 - Verified on 2026-05-27
-- all 7 test files passed
-- 78 assertions passed
+- all 8 test files passed
+- 80 assertions passed
 - selected module statement coverage reached `100.0`
 - selected module subroutine coverage reached `100.0`
 - `t/04-playwright.t` passed inside the Docker run
+- `t/07-installed-ajax-bootstrap.t` proved the installed `~/.developer-dashboard/skills/preview/` Ajax workers load `Preview::*` modules from the skill's own `lib/` path
 
 Coverage summary from the verified run:
 

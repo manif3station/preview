@@ -5,3 +5,6 @@
       inline previews for text, images, pdf, audio, and video files
     - added Docker-verified Perl and Playwright tests plus skill-local
       governance, usage, and release documentation
+    - fixed the installed Ajax worker bootstrap so `/app/preview` resolves
+      `Preview::Directory` and `Preview::State` from the skill's own `lib/`
+      path after a normal `dashboard skills install`

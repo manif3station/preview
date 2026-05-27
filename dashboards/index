@@ -272,10 +272,19 @@ CODE1: Ajax jvar => 'configs.preview.browse', type => 'json', file => 'browse', 
       require File::Basename;
       require File::Spec;
       require lib;
-      my $root = File::Basename::dirname($ajax_file);
-      $root = File::Basename::dirname($root) for 1 .. 4;
-      my $candidate = File::Spec->catdir( $root, 'lib' );
-      lib->import($candidate) if -d $candidate;
+      my $cursor = File::Basename::dirname($ajax_file);
+      for ( 1 .. 6 ) {
+        my $candidate = File::Spec->catdir( $cursor, 'lib' );
+        my $module    = File::Spec->catfile( $candidate, 'Preview', 'Directory.pm' );
+        if ( -f $module ) {
+          lib->import($candidate);
+          last;
+        }
+
+        my $parent = File::Basename::dirname($cursor);
+        last if !defined $parent || $parent eq $cursor;
+        $cursor = $parent;
+      }
     }
   }
 
@@ -300,10 +309,19 @@ CODE2: Ajax jvar => 'configs.preview.content', type => 'json', file => 'preview'
       require File::Basename;
       require File::Spec;
       require lib;
-      my $root = File::Basename::dirname($ajax_file);
-      $root = File::Basename::dirname($root) for 1 .. 4;
-      my $candidate = File::Spec->catdir( $root, 'lib' );
-      lib->import($candidate) if -d $candidate;
+      my $cursor = File::Basename::dirname($ajax_file);
+      for ( 1 .. 6 ) {
+        my $candidate = File::Spec->catdir( $cursor, 'lib' );
+        my $module    = File::Spec->catfile( $candidate, 'Preview', 'Directory.pm' );
+        if ( -f $module ) {
+          lib->import($candidate);
+          last;
+        }
+
+        my $parent = File::Basename::dirname($cursor);
+        last if !defined $parent || $parent eq $cursor;
+        $cursor = $parent;
+      }
     }
   }
 

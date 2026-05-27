@@ -9,6 +9,8 @@ The workflow is intentionally simple:
 3. The `/app/preview` bookmark loads the stored root through the skill Ajax worker.
 4. The page lists the current directory and previews supported files inline.
 
+The Ajax workers resolve `Preview::*` modules from the installed skill's own `lib/` directory, so the shipped `/app/preview` route works from a normal `~/.../.developer-dashboard/skills/preview/` install without manual `PERL5LIB` setup.
+
 Supported inline preview classes:
 
 - text
