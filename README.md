@@ -21,14 +21,10 @@ What it does:
 
 ## Installation
 
-```bash
-dashboard skills install <git-url-to-preview-skill>
-```
-
-Example local install:
+Install the skill into Developer Dashboard by repo name:
 
 ```bash
-dashboard skills install ~/projects/skills/skills/preview
+dashboard skills install preview
 ```
 
 ## CLI Usage
